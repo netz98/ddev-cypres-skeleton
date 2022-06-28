@@ -2,6 +2,10 @@
 
 End2End and API Testing with cypress
 
+## Useful links
+[VSF official e2e page](https://docs.vuestorefront.io/v1/guide/basics/e2e.html)
+[Cypress getting started](https://docs.cypress.io/guides/getting-started/installing-cypress)
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

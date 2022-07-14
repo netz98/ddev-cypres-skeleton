@@ -5,6 +5,7 @@ End2End and API Testing with cypress
 ## Useful links
 [VSF official e2e page](https://docs.vuestorefront.io/v1/guide/basics/e2e.html)
 [Cypress getting started](https://docs.cypress.io/guides/getting-started/installing-cypress)
+[netz98 internal Wikipage](https://wiki.netz98.org/pages/viewpage.action?pageId=151786126)
 
 ## Getting started
 

@@ -1,0 +1,9 @@
+version: '3.6'
+
+services:
+  web:
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+      - NEW_RELIC_ENABLED=false
+      - NODE_CONFIG_ENV=ddev
+      - NODE_APP_INSTANCE=belviniDE

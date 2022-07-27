@@ -1,7 +1,0 @@
-#!/bin/bash
-
-## Description: Runs yarn command
-## Usage: yarn [flags] [args]
-## Example: "yarn dev"
-
-yarn $@

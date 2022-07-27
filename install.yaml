@@ -1,0 +1,18 @@
+name: ddev-cypress
+
+# pre_install_actions - list of actions to run before installing the addon.
+# Examples would be removing an extraneous docker volume,
+# or doing a sanity check for requirements.
+pre_install_actions:
+
+# list of files and directories listed that are copied into project .ddev directory
+project_files:
+- docker-compose.cypress.yaml
+- e2etesting/
+- commands/cypress/cypress-run
+
+# List of files and directories that are copied into the global .ddev directory
+global_files:
+
+
+post_install_actions:

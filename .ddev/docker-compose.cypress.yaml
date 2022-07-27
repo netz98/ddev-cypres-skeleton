@@ -1,30 +1,30 @@
+#ddev-generate
 version: '3.6'
-
 services:
   cypress:
-    image: cypress/included:10.2.0
     container_name: ddev-${DDEV_SITENAME}-cypress
+    image: cypress/included:10.3.0
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
-      com.ddev.approot: ${DDEV_APPROOT}
-    user: "${DDEV_UID}:${DDEV_GID}"
-    networks: [default, ddev_default]
-
-    tty: true
-
-    environment:
-      - CYPRESS_baseUrl=${DDEV_PRIMARY_URL}
-      - DISPLAY=192.168.1.169:0
-
+      com.ddev.platform: ddev
+      com.ddev.app-type: php
+      com.ddev.approot: $DDEV_APPROOT
     volumes:
-      # Mount the project root to Cypress's project point
-      - "${DDEV_APPROOT}:/e2e"
-      # Mount DDEV to allow commands
+      - "../:/var/www/html:cached"
       - ".:/mnt/ddev_config"
+      - "/run/user/1001/:/tmp/wayland-0"
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
 
     external_links:
       # Resolve links via DDEV router
       - "ddev-router:${DDEV_HOSTNAME}"
 
-    entrypoint: /bin/bash
-    working_dir: /e2e
+    working_dir: /var/www/html/e2etesting
+    entrypoint: "/bin/bash"
+    tty: true
+    environment:
+      - CYPRESS_baseUrl=https://ddev-${DDEV_SITENAME}-web
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/tmp
+      - DISPLAY=
+    networks: ["default","ddev_default"]

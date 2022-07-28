@@ -16,3 +16,4 @@ global_files:
 
 
 post_install_actions:
+  - e2etesting/setup_cypress.sh
